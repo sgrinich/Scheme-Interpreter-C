@@ -1,0 +1,1 @@
+(cons (cdr (quote (1 2))) (quote (3 4)))

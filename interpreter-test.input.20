@@ -1,0 +1,9 @@
+ (define x #t)
+ (define y (or #f #f))
+ (or #f #f (or #f (or #f (or #f x))) y #f (or (if x (or #f #f) #f) x))
+ (define y 1)
+  (letrec ((sub (lambda (x)
+                  (if (= x 0)
+                      y
+                      (sub (- x y))))))
+                 (sub 5))

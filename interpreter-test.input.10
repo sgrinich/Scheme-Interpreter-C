@@ -1,0 +1,5 @@
+(define not
+  (lambda (bool1 bool2 bool3)
+    (if #t bool3 bool2)))
+     
+(not 7 2 3 )

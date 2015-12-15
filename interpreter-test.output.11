@@ -1,0 +1,10 @@
+(define test
+  (lambda (bool)
+    (if bool #f #t)))
+    
+(define test2
+  (lambda (bool)
+    (if bool #f #t)))
+    
+(test #t)
+(test2 #f)

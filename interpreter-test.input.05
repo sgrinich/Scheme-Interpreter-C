@@ -1,0 +1,1 @@
+(let ((quote (quote (a b c)))) (let ((y "goodbye")) (if #t quote (quote (xd)))))

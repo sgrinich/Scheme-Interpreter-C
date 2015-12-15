@@ -1,0 +1,168 @@
+;(define test
+  ;  lambda (x)
+ ;   (if #t 3 4))
+;(define nullNew test)
+;(nullNew 2)
+
+;(define five 5)
+
+;(+ 3 five five () 7.0 -1)
+
+
+;the null? below shouldn't be printing. but when we want it to print out, it should be printing from
+; the #t or #f in eval, not from the true/false in nullCheck
+
+;(define x ())
+;(if (null? x) 3 4)
+
+
+;right below should not be working.
+;(car (1 2 3))
+
+;(car (quote (2 ((biiiitcchh)) ass ) ))
+;(define x (quote ((1 3) 2 3 (8 (8)))))
+;(cdr (quote (1 2 3)))
+
+;(cdr (quote (1 2 3 (8 (8)))))              ;ouput is (2 3 (8 (8)))
+
+
+;;;;;;;;;; ~~ CAR SECTION ~~
+
+;(define x (quote ((1 2) (2 9))))
+;(car (cdr x))                              ;output is (2 9)
+
+;(car (car (cdr (quote (1 ((9 10) 2 3)))))) ;output is (9 10)
+;(car (cdr (quote (1 (1 2 3) (4 5)))))      ;ouput is (1 2 3)
+;(car (car (quote ((1 2) 2))))              ;output is 1
+;(car (cdr (quote ((1 2) 2))))              ;output is 2
+;(car (cons 1 (quote ( 1 2))))              ;output is 1
+
+
+;;;;;;;; ~~ CDR SECTION
+
+;(define x (quote ((1 2) (2 9))))            ;output is ((2 9))
+;(cdr x)
+
+;(cdr (quote ((1 2) 2)))                    ;output is (2)
+;(cdr (cdr (quote ((1) (2 3)))))            ;output is ()
+;(cdr (car (quote ((1 2) 2))))              ;output is (2)
+;(cdr (cons 1 (quote (1 2))))               ;output is (1 2)
+
+
+
+
+;;;;;;;;;; ~~ CONS SECTION
+
+;(cons 1 (quote ( 1 2)))                    ;output is (1 1 2)
+;(cons (car (quote (1 2))) (quote (3 4)))   ;output is (1 3 4)
+;(cons (cdr (quote (1 2))) (quote (3 4)))    ;output is ((2) 3 4)
+;(cons (cons (cdr (quote (1 2))) (quote (3 4))) (quote (1)))     ;output is (((2) 3 4) 1)
+
+;(cdr (quote (4 dot 3 )))
+
+;(+ 1 (+ 1 9))
+
+;(let ((x 1) (y 1)) (let ((y "goodbye")) (if #f x y)))
+
+
+;;;;;;;;;;; LET-STAR
+
+(let ((x 0) (y 1))
+ (let ((x y) (y x))
+    y ))
+
+;(define y 10)
+;(let* ((x y) (y x)) y)
+
+;(define x 10)
+;(let ((y 2)) (set! x (lambda () 5)))
+;x
+
+
+
+;(define y 4)
+;(let* ((x y)  (y 3)) x)
+
+
+
+
+
+
+
+; (define x #t)
+; (define y (and #t #t))
+; (and #t #t (and #t (and #t (and #t x))) y #t (and (if x (and #t #t) #t) x))
+
+
+; (define x #t)
+; (define y (or #f #f))
+; (or #f #f (or #f (or #f (or #f x))) y #f (or (if x (or #f #f) #f) x))
+; (define y 1)
+;  (letrec ((sub (lambda (x)
+;                  (if (= x 0)
+;                      y
+;                      (sub (- x y))))))
+;                 (sub 5))
+
+
+; (letrec ((test
+;   (lambda (a)
+;     (lambda (b)
+;       (if #f a b)))))
+
+; ((test 3) 4))
+
+; (define x 5)
+;(define y 5)
+;(set! x #t)
+;(and x #t)
+
+;(* 40 x)
+;(*)
+;(* 40)
+;(* x (* 2 2))
+
+;(- 2)
+
+;(define x 1)
+; (define y 1)
+
+; (begin (set! x 3) (set! y 4) (+ 1 4 4 3) (set! y (+ 3 5)))
+; (+ x y)
+;(+ (begin (set! x 3) (set! y 4) (+ 1 3) (set! y 5)) 2)
+ ;(begin (set! x 3) (set! y 4) (+ 1 3) (set! y 5))
+ ; (+ (begin) 2)
+
+ ; (cond
+ ;  (#f 1)
+ ;  ((if #t #f #f) 2)
+ ;  (#f 3)
+ ;  (#f 5)
+ ;  (else (if #t (+ 1 999) 3)))
+
+; (and (> x y) #t)
+
+; (> "DAD" 6)
+; (/ 10 2)
+
+
+;- (quote ()) 3)
+
+
+; (* (* (/ 2 3 3) 3) 3)
+
+; (/ (+ (+ 1 (+ 1 2)) 3) (+ (+ 1 2) 3))
+; (/ 1 16)
+
+
+
+
+
+
+
+
+
+
+
+
+;(+ (modulo (+ 4 (+ 2 2)) 3) 1)

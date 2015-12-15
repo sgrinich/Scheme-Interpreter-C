@@ -1,0 +1,6 @@
+(define test
+  (lambda (a)
+    (lambda (b)
+      (if #f a b))))
+
+((test 3) 4)

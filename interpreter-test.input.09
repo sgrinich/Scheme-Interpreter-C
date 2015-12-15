@@ -1,0 +1,16 @@
+(define test
+  (lambda ()
+   (if #t 1 2)))
+   
+(define testCond
+  (lambda ()
+   (if #t #t 2)))
+    
+    
+;(testCond)    
+    
+(if (testCond) 3 100)
+(testCond)
+;;(if testCond test 100)
+;;(if testCond (testCond) 60)
+;;test
